@@ -13,22 +13,40 @@ A simple web interface for searching and downloading log archives by date and UT
 
 ## Setup
 
-1. Install Python dependencies:
+### Quick Start (Recommended)
+Simply run the provided script:
+```bash
+./run_app.sh
+```
+
+This script will automatically:
+- Create a virtual environment if it doesn't exist
+- Install all dependencies
+- Start the Flask application
+
+### Manual Setup
+1. Create and activate a virtual environment:
+```bash
+python3 -m venv log_archive_env
+source log_archive_env/bin/activate
+```
+
+2. Install Python dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Update the `app.py` file:
+3. Update the `app.py` file:
    - Replace the `run_log_script()` function with your actual log archiving script
    - Update the `LOG_DIRECTORY` variable to point to your log directory
    - Change the `secret_key` to a secure random string
 
-3. Run the application:
+4. Run the application:
 ```bash
 python app.py
 ```
 
-4. Open your browser and go to `http://localhost:5000`
+5. Open your browser and go to `http://localhost:5000`
 
 ## Integration with Your Script
 
@@ -63,6 +81,8 @@ def run_log_script(date, utrnno):
 ├── templates/
 │   └── index.html      # Web interface template
 ├── requirements.txt    # Python dependencies
+├── run_app.sh          # Easy startup script
+├── log_archive_env/    # Virtual environment (created automatically)
 └── README.md          # This file
 ```
 

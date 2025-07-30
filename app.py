@@ -8,6 +8,7 @@ import shutil
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-change-this'  # Change this to a secure secret key
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
 # Directory where your logs are stored (adjust as needed)
 LOG_DIRECTORY = "/path/to/your/logs"
